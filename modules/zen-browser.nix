@@ -22,7 +22,7 @@
 	programs.zen-browser.profiles.default = {
 		containersForce = true;
 		spacesForce = true;
-		pinsForce = true;
+		# pinsForce = true;
 	};
 
 	programs.zen-browser.profiles.default.settings = {

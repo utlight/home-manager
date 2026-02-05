@@ -1,6 +1,4 @@
-{ config, pkgs, ... }:
-
-{
+{pkgs, ...}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "utlight";
@@ -16,20 +14,20 @@
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
   imports = [
-  	./modules/zen-browser.nix
-  	./modules/flatpak.nix
+    ./modules/zen-browser.nix
+    ./modules/flatpak.nix
   ];
 
   programs.yazi.enable = true;
   programs.bash.enable = true;
-  
+
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
-	neovim	
-	bitwarden-desktop
-	azure-functions-core-tools
-	azurite
-	jetbrains-toolbox
+    neovim
+    bitwarden-desktop
+    azure-functions-core-tools
+    azurite
+    jetbrains-toolbox
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -67,6 +65,7 @@
     EDITOR = "nvim";
     VISUAL = "nvim";
     GTK_THEME = "Adwaita:dark";
+    HOME_MANAGER_BACKUP_EXT = "backup";
   };
 
   # Let Home Manager install and manage itself.
